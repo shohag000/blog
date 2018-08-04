@@ -1,4 +1,4 @@
-# Blog site
+# Blog site by Django and Bootstrap
 
 In this blog site user can do the following 
 
