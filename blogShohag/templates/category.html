@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Category {% endblock %}
+{% block stylesheet %}
+
+		{% endblock %}
+{% block content %}
+
+	<!-- END #fh5co-header -->
+<h3 class="fixed-center text-center text-success">Category: {{ category.name }}</h3>
+
+{% for post in posts %}
+
+	<article class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-xxs-12 animate-box">
+		<figure>
+			<a  href="{% url 'single_post' id=post.id %}"><img src="{{ post.image.url }}" alt="Image" class="img-responsive "></a>
+		</figure>
+		<span class="fh5co-meta"><a href="{% url 'topic' name=post.category %}">{{ post.category }} </a></span>
+		<h2 class="fh5co-article-title"><a href="{% url 'single_post' id=post.id %}">{{ post.title }}</a></h2>
+		<span class="fh5co-meta fh5co-date">{{ post.posted_on }}</span>
+	</article>
+
+
+
+{% endfor %}
+{% endblock %}
+{% block script %}
+{% endblock %}
+
+
+

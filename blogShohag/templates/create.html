@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} {% endblock %}
+{% block stylesheet %}
+
+{% endblock %}
+{% block profile %} {% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div style="margin-left:50px">
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <a class="btn btn-success " role="button" href="{% url 'create_category' %}">Add Category</a>
+                <button class="btn btn-success" type="submit">Post</button>
+
+            </form>
+        </div>
+
+
+    </div>
+{% endblock %}
+{% block script %} {% endblock %}
